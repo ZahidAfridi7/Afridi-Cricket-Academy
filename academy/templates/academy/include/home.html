@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  ACA
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'academy/player.css' %}">
+  <link rel="stylesheet" href="{% static 'academy/index.css' %}">
+{%endblock%}
+
+{% block content %}
+  <section id="welcome">
+    <header>
+        <img src="{% static 'academy/img/zahid.JPG'%}" alt="zahid afridi author of the blog">
+        <h1>Welcome To Afridi Cricket Academy</h1>
+    </header>
+    <p>Hello! This is the place where you can start your career as a professional Cricketer.</p>
+  </section>
+  <section id="latest-posts">
+    <h1>ACA Players</h1>
+    <ul>
+      {% for post in posts %}
+        {% include "academy/include/player.html" %}
+        {% endfor %}
+      </ul>
+  </section>
+  
+  <section id="about">
+    <h2>LOCATION</h2>
+    <p>BAR QAMBER KHEL BARA DISTRICT KHYBER</p>
+    <p>contact no: 03030997100</p>
+
+  </section>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+{%load static %}
+
+{% block title %}
+  {{player.title}}
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'academy/player-details.css' %}">
+  
+{%endblock%}
+
+{% block content %}
+ <section id="summary"> 
+    <h2>{{player.title}}</h2>
+    <article>
+        <img src="{{ player.image.url }}" alt="{{ player.title }}"/>
+        {% comment %} <address>by <a href="mailto:{{ post.author.e_mail }}"> {{post.author}}</a></address> {% endcomment %}
+    </article>
+ </section>
+
+ <main> 
+    <p>{{player.content|linebreaks}}</p>
+ </main>
+
+
+{%endblock%}

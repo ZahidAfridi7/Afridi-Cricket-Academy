@@ -1,0 +1,11 @@
+<li>
+    <article class="post">
+        <a href="{% url 'player-details' id=player.id %}">
+             <img src="{{ player.image.url }}" alt="{{ player.title }}"/>
+        </a>
+        <div class="post_content">
+            <h3>{{ player.title }}</h3>
+            <p>{{ player.excerpt }}</p>
+        </div>
+    </article> 
+</li>
